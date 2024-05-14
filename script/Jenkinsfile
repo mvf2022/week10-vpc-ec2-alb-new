@@ -7,5 +7,19 @@ pipeline{
                 sh 'terraform init -on-color'
             }
         }
+          
+                stage('format'){
+            steps{
+                sh 'terraform fmt -on-color'
+            }
+        }
+        
+           stage('plan'){
+            steps{
+                sh 'terraform plan -on-color'
+            }
+        }
+
+
     }
 }
